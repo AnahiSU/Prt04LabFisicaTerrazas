@@ -1,0 +1,357 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.2 distribution.
+%   Version 4.2a of REVTeX, December 2014
+%
+%   Copyright (c) 2014 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.2
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+groupedaddress,
+unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper
+%floatfix,
+superscriptaddress
+]{revtex4-2}
+\include{Formato}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{Mediciones de laboratorio}% Force line breaks with \\
+%\thanks{A footnote to the article title}%
+
+\author{Sanabria Ugarte, Anahí.}
+\affiliation{Departamento de Sistemas e Informática}
+\email{202300536@umss.edu.bo}
+
+%Lines break automatically or can be forced 
+
+%with \\
+
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+A menudo, en la vida cotidiana, nos encontramos con productos que presentan medidas extremadamente pequeñas. Hablamos, por ejemplo, del diametro de un tornillo o el grosor de un cable. Este tipo de objetos nos llevan a pensar y preguntarnos a la hora, generalmente, de comprarlos, qué tan precisas son estas medidas y cómo es que se llegan a conseguir. 
+En este sencillo experimento de laboratorio, exploraremos éstas incógnitas, conoceremos la sherramientas y los errores a la hora de medir objetos pequeños y revisaremos algunos casos analizados para el entendimiento del lector.
+\begin{description}
+\item[Palabras clave]: medición, vernier, error.
+\end{description}
+\end{abstract}
+
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+%\tableofcontents
+
+\section{Introducción}
+\label{sec:introduccion}
+En la vida cotidiana se presenta la necesidad de medir objetos para tener una idea de su capacidad y resistencia en ciertos trabajos. Cuando se reliza la medición de un objeto de tamaño considerablemente normal o grande, no es una preocupación el valor de la medición, tampoco importa el instrumento que se empleará, solamente se asegura de que realmente podrá medir la superficie u objeto en la unidad que se requiere. Por ejemplo, las telas para coser una prenda de ropa son medidas con una cinta métrica, también se puede observar que, cuando los niños realizan márgenes o trabajos en sus escuelas, emplean las reglas comunes. Sin embargo, cuando se compra material de construcción, las ofertas vienen en medidas demasiado pequeñas, como el grosor de un cable o el diámetro de un tornillo. Como consecuente, surge la pregunta: "¿cómo es posible que algo tan pequeño haya sido medido con exactitud?". 
+Indagando un poco más, se encontrará que existen herramientas que ofrecen una precisión y eficacia para este tipo de medidas, resaltando el Vernier o el micrométrico, pero también se considera que ningún instrumento es 100\% certero a la hora de realizar una medición. A este tipo de inseguridades y variaciones se denominan incertidumbre o errores. Estos valores indican la variación entre el valor que nosotros tomamos en la medición y el valor real del objeto medido(Sears y Zemansky, Física Universitaria). 
+
+En este estudio experimental, se centrarán los esfuerzos en  determinar la desviación que puede sufrir una muestra de distintas mediciones para un mismo objeto. Como elemento adicional a nuestro estudio, veremos los volumenes de cada figura y sus errores correspondientes.
+ 
+
+
+\section{Objetivo y planteamiento del problema}
+\label{obj_plant}
+Se denomina medición a toda acción que da como resultado una medida en el sistema que se requiera. Existe mediciones directas e indirectas.  
+
+\textbf{Mediciones directas:} son quellas que se consiguen mediante un instrumento de medición.  
+
+\textbf{Mediciones indirectas:} son aquellas que se consiguen a través de cálculos matemáticos.
+
+Las mediciones indirectas sirven para calcular mediciones quizás imposibles para un instrumento. Por ejemplo, el área de una loza. En esta ocasión se calculará el volúmen de las figuras geométricas.  
+
+Así mismo, se mencionó que para medidiciones muy pequeñas existen herramientas cuyos resultados son expresados en [mm]. Sin embargo, se debe considerar un factor importante a la hora de medir: el ojo humano. 
+
+Al igual que no se percibe el mundo de la misma forma que otras personas, las mediciones nunca serán completamente exactas debido a que estas herramientas basan mucho su medición final al resultado visto por el experimentador, a su calibración o a otro tipo de factores alterantes, por lo que cada instrumento viene, por defecto, con un error. Este error varía, pero generalmente se lo expresa como ±$0.0x$ siendo x la posición del primero de los números inseguros de nuestra medición. En otras palabras, x será el primer número que podrá variar dependiendo la herramienta. Este valor puede cambiar y expresarse como $0.02$ o $1.00$, por lo que la cifra expresada con anterioridad es unicamente una generalización. Es muy importante tenerlo en cuenta.
+
+
+Los errores en los instrumentos mencionados anteriormente, pueden ser clasificados de dos formas, dependiendo su causante: error sistemático o error aleatorio.
+
+
+\textbf{El error sistemático} se refiere al error producido por una mala calibración del instrumento utilizado, por lo tanto es inevitable e independiente del experimentador.
+
+\textbf{El error aleatorio} hace referencia al error casual o estadístico de una gran cantidad de medidas tomadas debido a que la percepción del experimentador y su medición, como se explicó anteriormente, no es la misma en comparación a otros. Es normal tener distintas medidas, pero que no varíen más que por decimales.
+
+Este error será la que estudiaremos en este experimento a través de la comparación de una gran cantidad de mediciones tomadas a figuras geométricas. Todos los resultados serán agrupados y representados de forma gráfica para un mejor entendimiento.
+
+
+\section{Materiales y método}
+\label{sec:met}
+Para comenzar el experimento se necesitará, principalmente, las figuras geométricas a ser evaludas. En este caso, se usaron cuatro figuras: cilindro, cubo, paralelepípedo y pirámide. De cada una se tomaron mediciones en [cm], y dependiendo la figura se extrajeron datos como: altura, lado, alto, etc.
+
+Este experimento busca profundizar en el concepto de \textbf{error aleatorio}, por ello se utilizó distintas \textbf{bases de datos}. Específicamente tendremos seis bases de datos con mil medidas cada una por figura geométrica. Cabe resaltar que si el lector gusta hacer este experimento, no requiere tantas medidas, sin embargo, tener un gran volumen de datos hace que los resultados estadísticos sean más precisos. Las caacterísticas a ser evaluadas, según la figura, son:
+\begin{itemize}
+	\item Cilindros: área y altura.
+	\item Cubos y paralelepípedos: lado, alto y ancho.
+	\item Pirámides: base y altura.
+
+\end{itemize}
+En esta ocasión también se calcularon los volúmenes de cada figura para hallar sus errores, por lo tanto, las ecuaciones que se requirieron fueron: el promedio o media [\ref{EQ:001}], error absoluto [\ref{EQ:002}], error relativo [\ref{EQ:003}], error porcentual [\ref{EQ:004}], volumen de un cilindro [\ref{EQ:005}], volúmen de un cubo [\ref{EQ:006}], volúmen de un paralelepípedo[\ref{EQ:007}] y volúmen de una pirámide [\ref{EQ:008}] .
+ 
+ 
+
+\begin{equation}\label{EQ:001}
+	\hat X = \frac{1}{n} \sum_{n}^{i=1} x_i
+\end{equation}
+donde:
+\begin{description}
+	\item[n] representa el número de datos que tenemos.
+	\item[$x_i$] hace referencia a cada uno de los datos.
+\end{description}
+\begin{equation}\label{EQ:002}
+	e_x = x_{rep} - x_v
+\end{equation}
+donde:
+\begin{description}
+	\item[$x_{rep}$] es el valor obtenido en la medición.
+	\item[$x_{v}$] es el valor real, en nuestro caso, la media o promedio.
+\end{description}
+\begin{equation}\label{EQ:003}
+	E = \frac{e_x}{x_{rep}}
+\end{equation}
+donde:
+\begin{description}
+	\item[$e_x$] es el error absoluto.
+\end{description}
+\begin{equation}\label{EQ:004}
+	E\% = \frac{e_x}{x_{rep}} * 100\%
+\end{equation}
+
+\begin{description}
+	\item[$e_x$] es el error absoluto.
+\end{description}
+\begin{equation}\label{EQ:005}
+	VolCilindro = \pi * radio^2 * altura
+\end{equation}
+
+\begin{equation}\label{EQ:006}
+	VolCubo = lado^3
+\end{equation}
+
+\begin{equation}\label{EQ:007}
+	VolParalelepipedo = lado * altura
+\end{equation}
+
+\begin{equation}\label{EQ:008}
+	VolPiramide = \frac{AreaBase * altura}{3}
+\end{equation}
+Para el análisis de los datos, las gráficas y las nuevas columnas añadidas en las bases de datos, se utilizó el lenguaje de programación R en RStudio. Esto facilitó la lectura y generación de resultados para cada figura, gracias a sus distintas funciones.
+
+\section{Desarrollo experimental}
+
+El experimento tiene un enfoque a calcular datos y demostrar los errores de medición.
+Para comenzar a leer los datos, se procede a importar dentro de Rstudio las bases de datos con las mediciones previamente tomadas y expresadas en [cm]. Se toma en cuenta que se presenta 6 muestras de mil mediciones, cada una por figura geométrica. Sin embargo, para mayor facilidad de esta práctica, se unió las seis bases para tener una única figura representativa.
+Se inserta una nueva columna con una función creada para calcular volúmenes. Se la denominará \textbf{Volumen} en los cuatro casos.  
+
+
+Es apartir de estos datos que se trabajrá para el resto de cálculos.
+A continuación, se inicia con el cálculo de los errores de las mediciones tomadas y sus volumenes calculados. En este caso cada columna tendrá su valor a través de una función creada a partir de la ecuación [\ref{EQ:001}]. Lo que hará es tomar todos los valores de la columna como xi y el largo de la misma como n.  
+
+Posterior a esto se creará una nueva columna denominada ex(Columna a ser evaluada), por ejemplo: exLado. En ella se guardan los resultados de la evaluación por una función creada a base de la ecuación [\ref{EQ:002}].
+
+De la misma forma con las siguientes dos columnas, se creó una función a base de la ecuación [\ref{EQ:003}] y otra a base de la ecuación [\ref{EQ:004}] y se nombraron sus columnas como E(Columna evaludada) y EPorc(Columna evaluda) respectivamente.
+
+Adicionalmente, se implementó la función \text{media} para calcular las tendencias centrales de cada columna, incluyendo errores. Con ella se usó la función \textbf{abline} y se creó una línea para indicar la media graficamente. También se usó la función \textbf{plot} para graficar dichos datos y poder analizarlos de mejor forma.
+
+\section{Resultados}
+\label{Sec:res}
+
+Con los datos bases de cada dataframe (antes de añadir el volúmen) y una vez realizado el análisis completo, obtuvimos los siguientes resultados experimentales:
+%Insertando las imágenes
+
+
+Primeramente se graficó las mediciones previas al cálculo.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.05\linewidth]{../images/resumen_cilindros}
+	\caption{Mediciones iniciales de los cilindros.}
+	\label{fig:resumencilindros}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.05\linewidth]{../images/resumen_cubos}
+	\caption{Mediciones iniciaes de los cubos. }
+	\label{fig:resumencubos}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.05\linewidth]{../images/resumen_paralelepipedos}
+	\caption{Mediciones iniciales de los paralelepípedos.}
+	\label{fig:resumenparalelepipedos}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.05\linewidth]{../images/resumen_piramides}
+	\caption{Mediciones iniciales de las pirámides.}
+	\label{fig:resumenpiramides}
+\end{figure}
+
+Al hacer los cálculos correspondientes a cada figura y añadir la columna volumen, nos encontramos que los dataframes bases terminaron de esta forma:
+
+
+\begin{table}[h]
+	\centering
+	\caption{Columna \textit{Volumen} añadida de los cilindros.}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Nro & Área & Altura & Volumen\\
+		\hline
+		1 & 4.18175 & 5.342531 & 22.34116\\
+		\hline
+		2 & 4.273458 & 5.602519 & 23.94213\\
+		\hline
+		3 & 4.000337 & 5.099246 & 20.39870\\
+		\hline
+		4 &4.679187&5.353589&25.05045\\
+		\hline
+		5 &3.864098&5.308988&20.51445\\
+		\hline
+		6 &...&...&...\\
+		\hline
+	\end{tabular}
+\end{table}
+
+Luego, se calculó y graficó la media de cada una de las columnas para posterior graficación: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.05\linewidth]{"../images/resumen medias"}
+	\caption{}
+	\label{fig:resumen-medias}
+\end{figure}
+
+\textit{Tomar en cuenta que cada rombo representa una columna del dataframe.}
+
+
+Datos bases para el resto de los cálculos:
+
+\begin{table}[h]
+	\centering
+	\label{table:mediasbases}
+	\caption{Medias de mediciones base.}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		& Cilindro & Cubo & Pirámide & Paralelepípedo \\
+		\hline
+		Área & 4.029879 &  &  &\\
+		\hline
+		Alto & 4.989340 & 5.012986 & 4.969268 & 4.78119507\\
+		\hline
+		Ancho &  & 1.515473 & & 1.29920787\\
+		\hline
+		Base &  &  & 4.029032&\\
+		\hline
+		Lado &  &4.025683  &  & 3.75413699\\
+		\hline
+		Volumen & 20.106316 & 30.612950  & 27.25429764 & 23.80903181\\
+		\hline
+		
+	\end{tabular}
+\end{table}
+
+\section{Discusión}
+\label{Sec:Disc}.
+Partimos del cálculo de volumenes. Podemos observar que, tal cual evidencia el cuadro II [\ref{table:mediasbases}]
+
+
+\section{Conclusiones}
+\label{Sec:Concl}
+Al final de la discusión o en una sección separada, de acuerdo con las características de 
+cada revista, se deben reflejar las conclusiones más significativas y la importancia 
+práctica del estudio.
+
+Las conclusiones son generalizaciones derivadas de los resultados y constituyen los 
+aportes y las innovaciones del estudio realizado.19 Debido a que son producto de los 
+resultados y la discusión, se debe evitar hacer afirmaciones rotundas y sacar más 
+conclusiones de las que los resultados permitan.
+
+La forma más simple de presentar las conclusiones es enumerándolas consecutivamente, 
+aunque se puede optar por recapitular brevemente el contenido del artículo, mencionando 
+someramente su propósito, los métodos principales, los datos más sobresalientes y la 
+contribución más importante de la investigación, y evitar repetir literalmente el 
+contenido del resumen.
+
+Se sugiere no hacer conclusiones sobre los costos y beneficios económicos, a menos que el 
+manuscrito incluya datos económicos con sus correspondientes análisis. Tampoco se deben 
+hacer afirmaciones o alusiones a aspectos de la investigación que no se hayan llevado a 
+término. 
+
+La discusión puede incluir recomendaciones y sugerencias para investigaciones futuras, 
+tales como métodos alternos que podrían dar mejores resultados, tareas que no se hicieron 
+y que debieron hacerse y aspectos que merecen explorarse en las próximas investigaciones.
+
+\section{Bibliografía}
+
+Las referencias bibliográficas constituyen un grupo de datos precisos detallados para la 
+identificación de una fuente documental impresa o no, de la cual se obtuvo la información.
+
+En esta sección se detallarán los trabajos a los que se hizo referencia en el artículo y 
+que deben ser numerados consecutivamente en el orden en que se mencionan por primera vez 
+en el texto.
+
+Debe existir siempre una correspondencia entre las citas que haya hecho en su trabajo y 
+las que anexe en la literatura citada, ya que normalmente los lectores estarán 
+interesados en verificar los datos que efectivamente se utilizaron para la investigación.
+
+El error más frecuente en esta sección es transcribir incorrectamente algún dato de la 
+cita, lo que dificultará su localización por parte del lector.
+
+Las referencias cumplen dos funciones esenciales: testificar y autentificar los datos no 
+originales del trabajo y proveer al lector de bibliografía referente al tema en cuestión.
+
+Sólo se deben incluir como citas válidas artículos ya publicados en revistas científicas, 
+artículos aceptados para publicación especificando que dicho trabajo se encuentra en 
+prensa o en proceso de publicación; libros, capítulos de libros, tesis que formen parte 
+de catálogos de bibliotecas y documentación disponible en internet.
+
+La mayoría de las revistas no aceptan citas de comunicaciones personales, tesis no 
+publicadas, resúmenes de presentaciones en congresos y manuscritos en preparación.
+
+\bibliography{Bibliografia}% Produces the bibliography via BibTeX.
+
+
+\appendix
+\section*{Apendice 1}
+
+\section*{Apendice 2}
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******
