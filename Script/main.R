@@ -6,6 +6,8 @@
 #
 #Objetivo: Práctica 4
 
+# #### IPORTANDO LOS DAOTOS #####
+
 par(mfrow = c(3,5))
 
 plot(PosTime$t, PosTime$x1, type = "o")
@@ -13,7 +15,6 @@ plot(PosTime$t, PosTime$x2, type = "o")
 plot(PosTime$t, PosTime$x3, type = "o")
 plot(PosTime$t, PosTime$x4, type = "o")
 plot(PosTime$t, PosTime$x5, type = "o")
-
 
 plot(PosTime2$t, PosTime2$x1, type = "o")
 plot(PosTime2$t, PosTime2$x2, type = "o")
