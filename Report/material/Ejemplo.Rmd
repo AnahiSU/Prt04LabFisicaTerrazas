@@ -1,0 +1,54 @@
+---
+title: "Graficos"
+author: "JCTV"
+date: "4/26/2022"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Creando graficos con sus leyendas
+
+# importando datos
+
+```{r}
+Ejemplo <- read.csv2("~/Documents/UMSS/Clases/2022/Laboratorio/GeneralWork/HWlabs1Chp4C2/Data/C2/Ejemplo.csv")
+```
+
+adjuntando datos al entorno global de trabajo
+
+```{r}
+attach(Ejemplo)
+```
+
+observando datos
+
+```{r}
+head(Ejemplo)
+```
+
+# realizando multplot
+para realizar el multiplot es necesario ver los limites de 
+los ejes, x y y
+
+
+
+```{r}
+summary(Ejemplo)
+```
+
+# como el valor maximo de los datos esta en y3 => max=8.962
+```{r}
+
+plot(x = x, y = y1, ylim = c(1,9), panel.first = grid(col=12))
+points(x=x,y=y2, pch=3, col=14)
+points(x=x,y=y3, pch=5, col=16)
+# Agragando la leyenda
+legend(2, 8, legend=c("y1", "y2", "y3"),
+       col=c(12,14,16), pch=c(1,3,5), cex=0.8)
+
+```
+
+

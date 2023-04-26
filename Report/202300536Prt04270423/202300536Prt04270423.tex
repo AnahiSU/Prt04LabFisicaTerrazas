@@ -1,0 +1,261 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.2 distribution.
+%   Version 4.2a of REVTeX, December 2014
+%
+%   Copyright (c) 2014 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.2
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+groupedaddress,
+unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper
+%floatfix,
+superscriptaddress
+]{revtex4-2}
+\include{Formato}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\title{Varianza y desviación estándar}% Force line breaks with \\
+%\thanks{A footnote to the article title}%
+
+\author{Sanabria Ugarte, Anahí.}
+\affiliation{Departamento de Informática y Sistemas }
+\email{202300536@umss.edu.bo}
+%Lines break automatically or can be forced 
+
+%with \\
+
+
+\date{\today}% It is always \today, today,
+             %  but any date may be explicitly specified
+
+\begin{abstract}
+
+Las mediciones tomadas de forma directa, es decir, mediante un instrumento, deben ser expresadas de la forma correcta y en la notación internacional para el entendimiento de personas que no manejan el mismo idioma del autor o la misma simbología nativa que puede existir. Es por ello que saber nociones básicas de la estadísticas, nos permiten tener una escritura propia de ellas. A su vez, esto ayuda a leer otras mediciones, generalmente comerciales, y poder entender que es lo que se está por comprar.
+
+\begin{description}
+\item[Palabras clave]: medición, estadística, expresión, medida, dataframe.
+\end{description}
+\end{abstract}
+
+%\keywords{Suggested keywords}%Use showkeys class option if keyword
+                              %display desired
+\maketitle
+
+%\tableofcontents
+
+\section{Introducción}
+\label{sec:introduccion}
+
+Al reportar mediciones de laboratorio en experimentos y, sobretodo, si son medidas directas, se encuentra una notación específica que ayuda a leer la medición de mejor forma. Generalmente, las mediciones viene del siguiente modo:
+
+\begin{center} {$3.66 \pm 0.01 [cm] ; 0.29\%$} \end{center}
+
+De esta forma, a simple vista y con pocos conocimientos, no se llega a entender más que las primeras cifras, que son lo que mide el objeto al que se consulta. Sin embargo, para hallar esos números tan raros, se han necesitado procesos matemáticos y estadísticos por detrás.
+
+Cuando se habla de mediciones con instrumentos que poseen una cierta calibración, se habla, como se ha recalcado en el artículo de mediciones de laboratorio \cite{trabajopasado}, de incertidumbre o errores en la medición. En el trabajo anteriormente mencionado, se hace énfasis al estudio superficial de lo que puede llegar a ser un error. Sin embargo, este error no es el único dato necesario para expresar mediciones con su notación respectiva. Para ello, la estadística y la comparación con lo que es la media de un conjunto de datos, serán las mejores aliadas. Los conceptos que se verán en este artículo son considerados conceptos básicos para entender la estadística y el origen de muchas notaciones especiales de mediciones.
+
+\section{Objetivo y planteamiento del problema}
+\label{sec:obj}
+En este experimento, se centrarán los esfuerzos en dejar claro conceptos como varianza y desvicación estándar, además de indagar un poco en el concepto de mediciones directas.
+Se recuerda que los conceptos de media se tocaron en el primer artículo con un experimento similar \cite{trabajopasado}.
+
+Cuando se tiene una medición expresada como anteriormente se mencionó, se debe empezar a reconocer términos. Generalmente la notación es la anteriormente mencionada en la sección \ref{sec:introduccion}.
+En el primer término se tendrá la media de una serie de mediciones o la medición única tomada con el instrumento. El segundo término, luego del símbolo más menos, es la desviación estándar, que delimita los intérvalos en el que puede estar nuestro error respecto al primer término. El tercer término hace referencia a la unidad en la que se expresa la medición, siempre se debe escribir entre corchetes. Por último, el tercer término indica el porcentaje de error que hubo respecto a la media de la medición.
+
+Cabe resaltar, el cálculo del porcentaje se hace mediante el error absoluto y el valor verdadero o media, términos que se profundizaron en el trabajo de mediciones de laboratorio \cite{trabajopasado}.
+
+Primeramente, se define:
+
+\textbf{Varianza: } es el estudio de la dispersión de los datos respecto a su media \cite{cervantes2008media}.
+
+\textbf{Desviación estándar: } es el intérvalo cuantificado done los datos dispersos están más cerca de la media. Los que se encuentren por fuera del intérvalo que marca, son datos alejados de la media \cite{cervantes2008media}.
+
+Una vez definidos, servirán para ver la utilidad de los cálculos respectivos. Adicionalmente podemos definir de forma muy sutil:
+
+\textbf{Medidas directas: } son medidas tomadas por ecuaciones algebráicas e incapaces para los instrumentos de medición.
+
+Entre las más comunes podemos encontrar el área y el volúmen.
+
+
+\section{Materiales y método}
+\label{sec:met}
+
+Para comenzar el experimento, se necesitará las herramientas de medición y las figuras o cuerpos a los que se realizará la medición. En el caso de este laboratorio, tomaremos una gran base de datos, la cual nos permitirá sacar resultados más precisos y ver el comportamiento. Se cuenta con una base de datos para 4 figuras y 10 tipos por cada una. Cada tipo tendrá mil datos a analizar.
+
+Si se replica este experimento, no es necesario tener tantos datos, con unos cuantos podrían ser suficentes, sin embargo tener muchos facilitan a tener más precisión en los cálculos de errores y desviaciones.
+
+Adicionalmente, para los cálculos matemáticos se empleó el lenguaje de programación R en RStudio, ahí se evaluaron y generaron las tablas correspondientes.
+
+La metodología que se usó fue empezar a reducir lo más que se pueda cada dataframe. Sacando medias y errores sin necesidad de sacar el de cada uno de los datos. A su vez, se usaron fórmulas específicas de cada propósito:
+
+\begin{equation}\label{EQ:001}
+	d_i = x_i - \hat{x}
+\end{equation}
+donde:
+\begin{description}
+	\item[$x_i$] representa la medición realizada.
+	\item[$\hat{x}$] representa la media de las mediciones.
+	\item[d] discrepancia.
+\end{description}
+
+\begin{equation}\label{EQ:002}
+	s^2 = \frac{1}{n} \sum_{n}^{i=1} d^2_i
+\end{equation}
+donde:
+\begin{description}
+	\item[$s^2$] representa la varianza.
+	\item[n] número de mediciones.
+	\item[$d^2_i$] representa la discrepancia de cada elemento al cuadrado.
+\end{description}
+
+\begin{equation}\label{EQ:003}
+	\sigma = \sqrt{s^2}
+\end{equation}
+donde:
+\begin{description}
+	\item[$\sigma$] representa la desviación estándar.
+	\item[$s^2$] representa la varianza.
+\end{description}
+
+\begin{equation}\label{EQ:004}
+	densidad = \frac{masa}{volumen}
+\end{equation}
+
+Se recalca que se profuncizó en \cite{trabajopasado} acerca de los errores y la media, por lo tanto no se les hará mención en este trabajo. 
+
+\section{Desarrollo experimental}
+
+Para comenzar con el experimento, se rquiere leer las bases de datos propuestas con las mediciones de cada figura. Esto se lo exporta en R como base de datos y se comienza a revisar las filas y columnas con las que cuenta. Para este caso tenemos figuras como: cilindro hueco, cilindro, esfera y moneda. Cada figura cuenta con tantas mediciones se haga como bases de datos. Cada base de datos cuenta con 10 columnas para diez figuras del mismo tipo. Por lo tanto, tendremos que sacar las medias de cada base y cada columna.
+
+Posterior, se usará una función creada llamada FunMed, la cual con el método apply se aplicará a cada columna y devolverá otro data frame con las medias respectivas.
+
+Con el uso de las medias de cada medición, se procederá a calcular las mediciones indirectas. Para el caso de cada figura, se desea saber la densidad y el volúmen respectivo. Para ello se crea la función \textbf{FunDen} y para la función \textbf{FunVol} se especificará una diferente de acuerdo a la figura que se tenga, es decir a base las ecuaciones \eqref{EQ:001}, \eqref{EQ:002}, \eqref{EQ:003} y usando las medias de cada dato. Así obtendremos tablas con muchos menos datos que si se sacara la densidad y volumen de cada una de las mediciones, que serían al rededor de cuatrocientos datos cada uno.
+
+A cada media de las mediciones se aplicará una función llamada \textbf{estadística}, con ella se debe calcular las varianzas \eqref{EQ:002}, desviación estándar y además encontrar los errores respecto a sus medias, como, el valor del error absoluto y el error porcentual. Con ello se podrá obtener los términos de la expresión, mencionada en la sección [\ref{sec:obj}]. Para el primer término(media), segundo término(desviación estándar) \eqref{EQ:003} y tercer término (error porcentual) $E\%$.
+
+Se procederá a graficar algunas mediciones con la función plot de R y armar las tablas correspondientes. 
+
+\section{Resultados}
+\label{Sec:res}
+
+\begin{table}[h]
+	\label{volmasden}
+	\centering
+	\caption{Cálculos de mediciones indirectas de volumen y densidad hechos para el cilindro hueco.}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Nro & Volúmen & Masas &Densidad  \\
+		\hline
+		1 & 45.04021 & 45.56902 &1.0117408  \\
+		\hline
+		2 & 74.26053  &55.23445   & 0.7437929 \\
+		\hline
+		3 & 120.89146  &58.20629    &0.4814756 \\
+		\hline
+		4 &170.38827 & 81.17701   &0.4764237\\
+		\hline
+		5 &3192.40553 & 89.53687  &0.4653550\\
+		\hline
+		6 &200.27907 & 105.73528  &0.5279397\\
+		\hline
+		7 &231.47604 & 108.85233  &0.470253\\
+		\hline
+		8 &375.37922 & 128.44803  &0.3421820\\
+		\hline
+		9 &600.10677 & 128.95991  &0.2148950\\
+		\hline
+		10 &564.75175& 139.75296  &0.2474591\\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\label{estadcil}
+	\centering
+	\caption{Aplicación de las fórmulas estadísticas en los cilindros huecos.}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+              &CH1   &CH2&   CH3&   CH4&   CH5&   CH6&   CH7&   CH8&   CH9&  CH10\\
+                \hline
+Media&         3.66& 4.25& 5.20& 5.87& 7.34& 8.15& 8.60& 8.73& 9.04& 9.90\\
+\hline
+DesvEst& 0.01& 0.01& 0.01& 0.01& 0.01& 0.01& 0.01& 0.01& 0.01& 0.01\\
+\hline
+ErrorPorc&     0.29& 0.25& 0.19& 0.18& 0.16& 0.13& 0.13& 0.14& 0.12& 0.11\\
+\hline
+	\end{tabular}
+\end{table}
+
+
+
+
+\section{Discusión}
+\label{Sec:Disc}
+
+Como se puede apreciar en la tabla 1 [\ref{volmasden}], las mediciones directas nos sirven para sacar las mediciones indirectas. En el caso del volumen y la densidad, se usaron los datos de los cilindros huecos, hablando del radio externo, interno y su alto.
+
+Igualmente en el cuadro 2 [\ref{estadcil}] se puede ver que estas mismas mediciones, directas e indirectas, nos fueron de utilidad para hallar sus estadísticas. Con estas se puede armar una seria de cosas interesantes. En esta tabla s emuestran la media, desviación estándar y error porcentual de las alturas de los 10 cilindros huecos evaluados con los datos de la tabla 1 [\ref{volmasden}]. Por lo tanto ya se puede hacer la interpretación de la escritura de las mediciones de la siguiente forma: primer dato a ser puesto será la media de la medición. Tomando como referencia el primer cilindro hueco, se tendrá que el primer término será 3.66. Posterior, se ubicará en la desvicación estándar, la cual es 0.01. Las unidades de medida de cada figura están en [cm], por lo tanto, esta será la unidad de medida que se usará. Finalmente el error porcentual será el tercer y último término de nuestra expresión. Es así que nos queda de la siguiente forma:
+
+
+\begin{center} {$3.66 \pm 0.01 [cm] ; 0.29\%$} \end{center}
+
+Con esto, se puede decir que se ha hecho una expresión correctamente escrita y además que habla por sí misma sin necesidad de hacer mucha explicación sobre ella.
+
+Continuando, se ve el comportamiento de algunas mediciones en relación de otras. Para ello se recurre a la primera figura [\ref{fig:volvsdenesf}]. Para una esfera se puede deducir lo siguiente: a mayor volumen, menor densidad. Esto también se puede comprobar al revisar la fórmula \eqref{EQ:004}, ya que el volumen inversamente proporcional a la densidad, por lo que el gráfico está correcto.
+
+Además en la figura [\ref{fig:diamvsdenmon}] se puede observar otro comportamiento en mediciones de una moneda. Evidenciando, por gráfico, que, a medida que el diametro de la moneda es mayor, la densidad de la moneda desciende. Esto se debe a que la masa y el volúmen son dependientes del diametro de la moneda y la densidad depende de ambos. Por lo tanto se concluye que la figura hace sentido.
+
+\section{Conclusiones}
+\label{Sec:Concl}
+
+Como principales conclusiones, se obtiene:
+Primeramente, el conocimiento de herramientas y ecuaciones básicas de estadística son útiles para conocer e interpretar muchos símbolos y resultados expresados con una notación especial. A su vez estos ayudan a la hora de realizar uno mismo un trabajo de medición y poder presentarlos correctamente y en forma de que todos puedan comprender lo que se quiere decir y expresar con ellos.
+
+Como siguiente conclusión, se puede decir que en las ecuaciones de una medición respecto a otra, se puede deducir su comportamiento, hablando de si son inversas, proporcionales o dependientes.
+
+Por último, se resalta que el experimento y el trabajo en general puede ser replicado por cualquier persona con el sumo cuidado de las mediciones y asegurándose que las fórmulas o ecuaciones utilizadas den los reusltados sin mucho redondeo y de la forma más precisa posible. Se recomienda tener un gran volúmen de datos para trabajarlas. Si las mediciones son tomadas a mano con un vernier o tornillo micrométrico, entonces entre 15 a 20 podrán ser un número ideal de mediciones.
+
+
+\section{Bibliografía}
+
+\bibliography{Bibliografia.bib}
+\cite{cervantes2008media}
+\cite{trabajopasado}
+
+
+\end{document}
+%
+% ****** End of file apssamp.tex ******
