@@ -12,7 +12,6 @@ pend = pendiente(tdist[99,2], tdist[2,2], tdist[99,1], tdist[2,1])
 calA = calcA(tdist)
 abline(calA,pend, col = "red", lwd = 2)
 
-DatosFinales = c("A" = calA, "B"= pend)
 
 plot(tdist, main="Posicion1 vs Tiempo",xlab="t^2[s] ",ylab="Posicion1[m]")
 pend = pendiente(tdist[99,2], tdist[2,2], tdist[99,1], tdist[2,1])
