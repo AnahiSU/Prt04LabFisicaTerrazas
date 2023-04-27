@@ -4,7 +4,7 @@
 #Grupo: B6
 #Fecha: 27/04/23
 #
-# Objetivo: Test al PostTime
+# Objetivo: Test al PostTime (Linealizacion por cambio de variable)
 
 # Plot de las funciones
 plot(x = PosTime$t, y = PosTime$x1, ylim = c(1,973),pch=1, panel.first = grid(col=12), main = "Posicion VS Tiempo", xlab = "t [s]", ylab = "x [m]")
@@ -24,7 +24,7 @@ lin.PosTimeX4 = linealizar(PosTime$t, PosTime$x4, 2)
 lin.PosTimeX5 = linealizar(PosTime$t, PosTime$x5, 2)
 
 # Plot de la funcion linealizada
-plot(x = lin.PosTimeX1$Z.2, y = lin.PosTimeX1$Y, main="Posicion1 vs Tiempo",xlab="t^2[s] ",ylab="Posicion1[m]")
+plot(x = lin.PosTimeX1$Z.2, y = lin.PosTimeX1$Y, main="Posicion1 vs Tiempo",xlab="t^2[s^2] ",ylab="Posicion1[m]")
 
 # Hallamos A y B
 fitPosTime.X1 <- lm( lin.PosTimeX1$Y ~ lin.PosTimeX1$Z.2 )
@@ -32,7 +32,7 @@ abline(a = fitPosTime.X1$coefficients[1], b = fitPosTime.X1$coefficients[2], lwd
 
 
 # Plot de la funcion linealizada
-plot(x = lin.PosTimeX2$Z.2, y = lin.PosTimeX2$Y, main="Posicion2 vs Tiempo",xlab="t^2[s] ",ylab="Posicion1[m]")
+plot(x = lin.PosTimeX2$Z.2, y = lin.PosTimeX2$Y, main="Posicion2 vs Tiempo",xlab="t^2[s^2] ",ylab="Posicion1[m]")
 
 # Hallamos A y B
 fitPosTime.X2 <- lm( lin.PosTimeX2$Y ~ lin.PosTimeX2$Z.2 )
@@ -40,7 +40,7 @@ abline(a = fitPosTime.X2$coefficients[1], b = fitPosTime.X2$coefficients[2], lwd
 
 
 # Plot de la funcion linealizada
-plot(x = lin.PosTimeX3$Z.2, y = lin.PosTimeX3$Y, main="Posicion3 vs Tiempo",xlab="t^2[s] ",ylab="Posicion1[m]")
+plot(x = lin.PosTimeX3$Z.2, y = lin.PosTimeX3$Y, main="Posicion3 vs Tiempo",xlab="t^2[s^2] ",ylab="Posicion1[m]")
 
 # Hallamos A y B
 fitPosTime.X3 <- lm( lin.PosTimeX3$Y ~ lin.PosTimeX3$Z.2 )
@@ -48,7 +48,7 @@ abline(a = fitPosTime.X3$coefficients[1], b = fitPosTime.X3$coefficients[2], lwd
 
 
 # Plot de la funcion linealizada
-plot(x = lin.PosTimeX4$Z.2, y = lin.PosTimeX4$Y, main="Posicion4 vs Tiempo",xlab="t^2[s] ",ylab="Posicion1[m]")
+plot(x = lin.PosTimeX4$Z.2, y = lin.PosTimeX4$Y, main="Posicion4 vs Tiempo",xlab="t^2[s^2] ",ylab="Posicion1[m]")
 
 # Hallamos A y B
 fitPosTime.X4 <- lm( lin.PosTimeX4$Y ~ lin.PosTimeX4$Z.2 )
@@ -56,7 +56,7 @@ abline(a = fitPosTime.X4$coefficients[1], b = fitPosTime.X4$coefficients[2], lwd
 
 
 # Plot de la funcion linealizada
-plot(x = lin.PosTimeX5$Z.2, y = lin.PosTimeX5$Y, main="Posicion5 vs Tiempo",xlab="t^2[s] ",ylab="Posicion1[m]")
+plot(x = lin.PosTimeX5$Z.2, y = lin.PosTimeX5$Y, main="Posicion5 vs Tiempo",xlab="t^2[s^2] ",ylab="Posicion1[m]")
 
 # Hallamos A y B
 fitPosTime.X5 <- lm( lin.PosTimeX5$Y ~ lin.PosTimeX5$Z.2 )
