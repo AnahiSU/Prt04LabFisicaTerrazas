@@ -6,6 +6,9 @@
 #
 #Objetivo: Práctica 4
 
+PosTime <- read.csv2("C:/Users/MSI i7/Desktop/practicas labo/prt04/202300536Prt04270423/Data/PosTime.csv")
+PosTime2 <- read.csv2("C:/Users/MSI i7/Desktop/practicas labo/prt04/202300536Prt04270423/Data/PosTime2.csv")
+PresVol <- read.csv2("C:/Users/MSI i7/Desktop/practicas labo/prt04/202300536Prt04270423/Data/PresVol.csv")
 ####Funciones####
 
 linealizar = function(t, dist){
@@ -14,15 +17,17 @@ linealizar = function(t, dist){
     res = data.frame("t"=tiempos, "dist" = pos)
     return(res)
 }
+pendiente = function(x2,x1,z2,z1){
+    B = (x2-x1)/(z2-z1)
+    return (B)
+}
+
+
+calcA = function(datos){
+    A = min(abs(datos$dist))
+}
 
 ##### IMPORTANDO LOS DATOS #####
-
-
-plot(x = PosTime$t, y = PosTime$x1, ylim = c(1,973), panel.first = grid(col=12))
-points(x= PosTime$t,y=PosTime$x2, pch=3, col=14)
-points(x= PosTime$t,y=PosTime$x3, pch=3, col=15)
-points(x= PosTime$t,y=PosTime$x4, pch=3, col=16)
-points(x= PosTime$t,y=PosTime$x5, pch=3, col=17)
 
 plot(x = PosTime$t, y = PosTime$x1, ylim = c(1,973),pch=1, panel.first = grid(col=12))
 points(x= PosTime$t,y=PosTime$x2, pch=2, col=14)
@@ -36,22 +41,7 @@ legend(0, 800, legend=c("x1", "x2", "x3","x4","x5"),
 tdist = linealizar(PosTime$t, PosTime$x1)
 
 plot(tdist)
+pend = pendiente(tdist[99,2], tdist[2,2], tdist[99,1], tdist[2,1])
+abline(calA,pend, col = "red", lwd = 2)
 
-cambZ <- function(indep, dep) {
-    z = indep^2
-    
-    return(data.frame(z, dep))
-}
-
-calcAB <- function(datos) {
-    b = (datos$dep[length(datos$dep) - 1] - datos$dep[2]) / (datos$z[length(datos$z) - 1] - datos$z[2]) # Hallamos la pendiente
-    a = min(abs(datos$dep))
-    return(c(a, b))
-}
-
-posTimeX1funZ <- cambZ(PosTime$t, PosTime$x1)
-plot(x = posTimeX1funZ$z, posTimeX1funZ$dep)
-
-calcAB(posTimeX1funZ)
-abline(a = calcAB(posTimeX1funZ)[1], b = calcAB(posTimeX1funZ)[2], col = "red")
-
+calA = calcA(tdist)
