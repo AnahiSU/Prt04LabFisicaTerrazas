@@ -1,5 +1,5 @@
 #Author: Leonel Zeballos Aldunate - Anahí Sanabria Ugarte - Mateo Merino Vidal
-#Cod Siss: 202300536
+#Cod Siss: 
 #Carrea: Ingeniería en Informática
 #Grupo: B6
 #Fecha: 27/04/23
@@ -27,21 +27,21 @@ pendiente = function(x2,x1,z2,z1){
 calcA = function(datos){
     A = min(abs(datos$dist))
 }
-linLog = function(t, dist){
-    A = log(min(t))
+linLog = function(t,dist){
+    A = log10(dist[which.min(t)])
     B = 2
-    Xprima = log(t)
-    Yprima = log(dist)
+    Xprima = log10(t)
+    Yprima = log10(dist)
     res = data.frame("B" = B,
                      "A" = A,
                      "Xprima" = Xprima,
                      "Yprima" = Yprima)
 }
 ecCurv = function(datos){
-    a = 10^datos[2,1]
-    pend = (datos[99,2]-datos[2,2])/(datos[99,1]-datos[2,1])
-    
-    res = c("a" = a, "B" = pend)
+    a = 10^datos[1,2]
+    pend = (datos[99,4]-datos[2,4])/(datos[99,3]-datos[2,3])
+    res = c("a" = a, 
+            "B" = pend)
 }
 
 ##### IMPORTANDO LOS DATOS #####
