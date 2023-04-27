@@ -1,4 +1,4 @@
-#Author: Leonel Zeballos Aldunate - Anahí Sanabria Ugarte
+#Author: Leonel Zeballos Aldunate - Anahí Sanabria Ugarte - Mateo Merino Vidal
 #Cod Siss: 202300536
 #Carrea: Ingeniería en Informática
 #Grupo: B6
@@ -37,4 +37,21 @@ tdist = linealizar(PosTime$t, PosTime$x1)
 
 plot(tdist)
 
+cambZ <- function(indep, dep) {
+    z = indep^2
+    
+    return(data.frame(z, dep))
+}
+
+calcAB <- function(datos) {
+    b = (datos$dep[length(datos$dep) - 1] - datos$dep[2]) / (datos$z[length(datos$z) - 1] - datos$z[2]) # Hallamos la pendiente
+    a = min(abs(datos$dep))
+    return(c(a, b))
+}
+
+posTimeX1funZ <- cambZ(PosTime$t, PosTime$x1)
+plot(x = posTimeX1funZ$z, posTimeX1funZ$dep)
+
+calcAB(posTimeX1funZ)
+abline(a = calcAB(posTimeX1funZ)[1], b = calcAB(posTimeX1funZ)[2], col = "red")
 
