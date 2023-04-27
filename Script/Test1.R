@@ -17,11 +17,11 @@ legend(0, 800, legend=c("x1", "x2", "x3","x4","x5"),
        col=c(12,14,15,16,17), pch=c(1,2,3,4,5), cex=1)
 
 # Linealizamos cada funcion
-lin.PosTimeX1 = linealizar(PosTime$t, PosTime$x1)
-lin.PosTimeX2 = linealizar(PosTime$t, PosTime$x2)
-lin.PosTimeX3 = linealizar(PosTime$t, PosTime$x3)
-lin.PosTimeX4 = linealizar(PosTime$t, PosTime$x4)
-lin.PosTimeX5 = linealizar(PosTime$t, PosTime$x5)
+lin.PosTimeX1 = linealizar(PosTime$t, PosTime$x1, 2)
+lin.PosTimeX2 = linealizar(PosTime$t, PosTime$x2, 2)
+lin.PosTimeX3 = linealizar(PosTime$t, PosTime$x3, 2)
+lin.PosTimeX4 = linealizar(PosTime$t, PosTime$x4, 2)
+lin.PosTimeX5 = linealizar(PosTime$t, PosTime$x5, 2)
 
 # Plot de la funcion linealizada
 plot(x = lin.PosTimeX1$Z.2, y = lin.PosTimeX1$Y, main="Posicion1 vs Tiempo",xlab="t^2[s] ",ylab="Posicion1[m]")
