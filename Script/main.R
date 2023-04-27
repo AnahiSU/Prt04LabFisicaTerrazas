@@ -15,8 +15,8 @@ PresVol <- read.csv2("C:/Users/usser/Escritorio/Leonel/Asignaturas/FISICA_GRAL_L
 #### FUNCIONES ####
 
 # Funcion que recibe los valores de la var dependiente, independiente y el exponente al que se eleva para el cambio de variable
-linealizar <- function(dep, indep, exponente){
-    return(data.frame(Z.2 = dep ^ exponente, Y = indep))
+linealizar = function(indep, dep, exponente){
+    return(data.frame(Z.2 = indep ^ exponente, Y = dep))
 }
 
 linLog = function(t, dist){
