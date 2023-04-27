@@ -1,4 +1,4 @@
-#Author: Leonel Zeballos Aldunate - Anahí Sanabria Ugarte
+#Author: Leonel Zeballos Aldunate - Anahí Sanabria Ugarte - Mateo Merino Vidal
 #Cod Siss: 202300536
 #Carrea: Ingeniería en Informática
 #Grupo: B6
@@ -6,23 +6,32 @@
 #
 #Objetivo: Práctica 4
 
-par(mfrow = c(3,5))
+##### IMPORTANDO LOS DATOS #####
 
-plot(PosTime$t, PosTime$x1, type = "o")
-plot(PosTime$t, PosTime$x2, type = "o")
-plot(PosTime$t, PosTime$x3, type = "o")
-plot(PosTime$t, PosTime$x4, type = "o")
-plot(PosTime$t, PosTime$x5, type = "o")
+PosTime <- read.csv2("C:/Users/usser/Escritorio/Leonel/Asignaturas/FISICA_GRAL_LAB/Informes/Informe4_colab/202300047Prt04260423/Data/PosTime.csv")
+PosTime2 <- read.csv2("C:/Users/usser/Escritorio/Leonel/Asignaturas/FISICA_GRAL_LAB/Informes/Informe4_colab/202300047Prt04260423/Data/PosTime2.csv")
+PresVol <- read.csv2("C:/Users/usser/Escritorio/Leonel/Asignaturas/FISICA_GRAL_LAB/Informes/Informe4_colab/202300047Prt04260423/Data/PresVol.csv")
 
+#### FUNCIONES ####
 
-plot(PosTime2$t, PosTime2$x1, type = "o")
-plot(PosTime2$t, PosTime2$x2, type = "o")
-plot(PosTime2$t, PosTime2$x3, type = "o")
-plot(PosTime2$t, PosTime2$x4, type = "o")
-plot(PosTime2$t, PosTime2$x5, type = "o")
+linealizar <- function(dep, indep){
+    return(data.frame(Z.2 = dep ^ 2, Y = indep))
+}
 
-plot(PresVol$V1, PresVol$P1, type = "o")
-plot(PresVol$V1, PresVol$P2, type = "o")
-plot(PresVol$V1, PresVol$P3, type = "o")
-plot(PresVol$V1, PresVol$P4, type = "o")
-plot(PresVol$V1, PresVol$P5, type = "o")
+linLog = function(t, dist){
+    A = log(min(t))
+    B = 2
+    Xprima = log(t)
+    Yprima = log(dist)
+    res = data.frame("B" = B,
+                     "A" = A,
+                     "Xprima" = Xprima,
+                     "Yprima" = Yprima)
+}
+
+ecCurv = function(datos){
+    a = 10^datos[2,1]
+    pend = (datos[99,2]-datos[2,2])/(datos[99,1]-datos[2,1])
+    
+    res = c("a" = a, "B" = pend)
+}
